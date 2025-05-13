@@ -78,38 +78,37 @@ const Navbar = () => {
             </li>
 
             {/* Simple Nav Items */}
-            
-            {[
-  { icon: <FaPlane />, label: "Flight", path: "/flight-form" },
-  { icon: <FaBus />, label: "Bus" },
-  { icon: <FaUniversity />, label: "Venue" },
-  { icon: <FaGlassCheers />, label: "Event" },
-  { icon: <FaMapMarkerAlt />, label: "Cab" },
-  { icon: <FaGift />, label: "Holiday Package" },
-  { icon: <FaPoundSign />, label: "Forex" },
-  { icon: <FaTools />, label: "Support" },
-].map((item, idx) => (
-  <li className="nav-item text-center" key={idx}>
-    {item.path ? (
-      <Link
-        to={item.path}
-        className="nav-link text-white d-flex flex-column align-items-center"
-      >
-        {item.icon}
-        <span className="small fw-semibold mt-1">{item.label}</span>
-      </Link>
-    ) : (
-      <a
-        className="nav-link text-white d-flex flex-column align-items-center"
-        href="#"
-      >
-        {item.icon}
-        <span className="small fw-semibold mt-1">{item.label}</span>
-      </a>
-    )}
-  </li>
-))}
 
+            {[
+              { icon: <FaPlane />, label: "Flight", path: "/flight-form" },
+              { icon: <FaBus />, label: "Bus", path: "/Bus-form" },
+              { icon: <FaUniversity />, label: "Venue" },
+              { icon: <FaGlassCheers />, label: "Event", path: "/Event-form" },
+              { icon: <FaMapMarkerAlt />, label: "Cab" , path: "/Cab-form" },
+              { icon: <FaGift />, label: "Holiday Package" },
+              { icon: <FaPoundSign />, label: "Forex" },
+              { icon: <FaTools />, label: "Support" },
+            ].map((item, idx) => (
+              <li className="nav-item text-center" key={idx}>
+                {item.path ? (
+                  <Link
+                    to={item.path}
+                    className="nav-link text-white d-flex flex-column align-items-center"
+                  >
+                    {item.icon}
+                    <span className="small fw-semibold mt-1">{item.label}</span>
+                  </Link>
+                ) : (
+                  <a
+                    className="nav-link text-white d-flex flex-column align-items-center"
+                    href="#"
+                  >
+                    {item.icon}
+                    <span className="small fw-semibold mt-1">{item.label}</span>
+                  </a>
+                )}
+              </li>
+            ))}
 
             {/* Dropdown: Solutions */}
             <li className="nav-item dropdown text-center">
