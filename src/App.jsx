@@ -14,6 +14,11 @@ import Flightform from './pages/FlightForm';
 import BusForm from './pages/BusForm';
 import EventForm from './pages/EventForm';
 import CabForm from './pages/CabForm';
+import HolidayForm from './pages/HolidayForm';
+ import ForexForm from './pages/ForexForm';
+
+ import SupportForm from './pages/SupportForm';
+
 
 function App() {
   return (
@@ -31,6 +36,12 @@ function App() {
         <Route path="/Bus-form" element={<BusForm />} />
         <Route path="/Event-form" element={<EventForm />} />
         <Route path="/Cab-form" element={<CabForm />} />
+        <Route path="/Holida-form" element={<HolidayForm />} />
+        <Route path="/Forex-form" element={<ForexForm />} />
+        <Route path="/Support-form" element={<SupportForm />} />
+
+
+
 
 
 

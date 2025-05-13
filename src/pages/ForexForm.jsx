@@ -4,14 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import capcha from "../assets/image/agreementform/captcha.png"
 
 
-
-function CabForm() {
+function ForexForm() {
   return (
-    <div className="container mt-5  mb-5">
+    <div className="container mt-5">
       <div className="card">
-        <div className="card-header fw-bold">Cab Enquiry</div>
+        <div className="card-header fw-bold">Forex Enquiry</div>
         <div className="card-body">
-          <p className="text-muted">Please provide us required details for Cab enquiry</p>
+          <p className="text-muted">Please provide us required details for Forex enquiry.</p>
           <form>
             <div className="row mb-3">
               <div className="col-md-6">
@@ -37,51 +36,37 @@ function CabForm() {
 
             <div className="row mb-3">
               <div className="col-md-6">
-                <label className="form-label">Location From</label>
+                <label className="form-label">Currency From</label>
                 <input type="text" className="form-control" />
               </div>
               <div className="col-md-6">
-                <label className="form-label">Location To</label>
-                <input type="text" className="form-control" />
-              </div>
-            </div>
-
-            <div className="row mb-3">
-              <div className="col-md-6">
-                <label className="form-label">No. of People</label>
-                <input type="number" className="form-control" />
-              </div>
-              <div className="col-md-6">
-                <label className="form-label">Appx. Budget</label>
+                <label className="form-label">Currency To</label>
                 <input type="text" className="form-control" />
               </div>
             </div>
 
-            <div className="row mb-3">
-              <div className="col-md-6">
-                <label className="form-label">Date of Travel</label>
-                <input type="date" className="form-control" />
-              </div>
-              <div className="col-md-6">
-                <label className="form-label">Remarks</label>
-                <textarea className="form-control" rows="3"></textarea>
-              </div>
+            <div className="mb-3">
+              <label className="form-label">Remarks</label>
+              <textarea className="form-control" rows="3"></textarea>
             </div>
 
             <div className="row mb-4">
               <div className="col-md-6">
                 <label className="form-label">Verify Code</label>
                 <div className="d-flex align-items-center">
-                <img src={capcha} alt="captcha" className="me-2" />
-                  <input type="text" className="form-control w-50" />
+                  <img
+                    src={capcha}
+                    alt="captcha"
+                    className="me-2"
+                  />
+                  <input type="number" className="form-control w-50" />
                 </div>
               </div>
             </div>
 
-            <div className="text-end">
-  <button type="submit" className="btn btn-success p-2 px-4">Submit</button>
-</div>
-
+            <div className="text-start">
+              <button type="submit" className="btn btn-success px-4">Submit</button>
+            </div>
           </form>
         </div>
       </div>
@@ -89,4 +74,4 @@ function CabForm() {
   );
 }
 
-export default CabForm;
+export default ForexForm;

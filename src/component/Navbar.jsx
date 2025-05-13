@@ -85,9 +85,9 @@ const Navbar = () => {
               { icon: <FaUniversity />, label: "Venue" },
               { icon: <FaGlassCheers />, label: "Event", path: "/Event-form" },
               { icon: <FaMapMarkerAlt />, label: "Cab" , path: "/Cab-form" },
-              { icon: <FaGift />, label: "Holiday Package" },
-              { icon: <FaPoundSign />, label: "Forex" },
-              { icon: <FaTools />, label: "Support" },
+              { icon: <FaGift />, label: "Holiday Package" , path: "/Holida-form"  },    
+              { icon: <FaPoundSign />, label: "Forex"  , path: "/Forex-form" },   
+              { icon: <FaTools />, label: "Support"  , path: "/Support-form" },  
             ].map((item, idx) => (
               <li className="nav-item text-center" key={idx}>
                 {item.path ? (
