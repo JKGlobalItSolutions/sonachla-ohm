@@ -84,10 +84,14 @@ const Navbar = () => {
               { icon: <FaBus />, label: "Bus", path: "/Bus-form" },
               { icon: <FaUniversity />, label: "Venue" },
               { icon: <FaGlassCheers />, label: "Event", path: "/Event-form" },
-              { icon: <FaMapMarkerAlt />, label: "Cab" , path: "/Cab-form" },
-              { icon: <FaGift />, label: "Holiday Package" , path: "/Holida-form"  },    
-              { icon: <FaPoundSign />, label: "Forex"  , path: "/Forex-form" },   
-              { icon: <FaTools />, label: "Support"  , path: "/Support-form" },  
+              { icon: <FaMapMarkerAlt />, label: "Cab", path: "/Cab-form" },
+              {
+                icon: <FaGift />,
+                label: "Holiday Package",
+                path: "/Holida-form",
+              },
+              { icon: <FaPoundSign />, label: "Forex", path: "/Forex-form" },
+              { icon: <FaTools />, label: "Support", path: "/Support-form" },
             ].map((item, idx) => (
               <li className="nav-item text-center" key={idx}>
                 {item.path ? (
@@ -125,15 +129,29 @@ const Navbar = () => {
               </a>
               <ul className="dropdown-menu" aria-labelledby="solutionsDropdown">
                 <li>
-                  <a className="dropdown-item" href="#">
-                    Enterprise
-                  </a>
+                  <Link className="dropdown-item" to="/Centralreseve">
+                    Central Reseve
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
-                    White Label
-                  </a>
+                  <Link className="dropdown-item" to="/PmsConnect">
+                    Pms Connect
+                  </Link>
                 </li>
+
+                <li>
+                  <Link className="dropdown-item" to="/ReserveBackend">
+                    Reserve Back end
+                  </Link>
+                </li>
+
+                <li>
+                  <Link className="dropdown-item" to="/Revenuemanage">
+                    Revenuemanage
+                  </Link>
+                </li>
+
+                
               </ul>
             </li>
 
@@ -150,16 +168,22 @@ const Navbar = () => {
                 <FaUsers />
                 <span className="small fw-semibold mt-1">Booking</span>
               </a>
+
               <ul className="dropdown-menu" aria-labelledby="bookingDropdown">
                 <li>
-                  <a className="dropdown-item" href="#">
-                    My Bookings
-                  </a>
+                  <Link className="dropdown-item" to="/Searchbookings">
+                    Search Booking
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
-                    Manage Booking
-                  </a>
+                  <Link className="dropdown-item" to="/CustomerSignin">
+                    Sign In
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/SignupForm">
+                    Sign Out
+                  </Link>
                 </li>
               </ul>
             </li>

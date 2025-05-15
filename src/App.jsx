@@ -18,6 +18,13 @@ import HolidayForm from './pages/HolidayForm';
  import ForexForm from './pages/ForexForm';
 
  import SupportForm from './pages/SupportForm';
+ import Searchbookings from './pages/Searchbookings';
+ import CustomerSignin from './pages/CustomerSignin';
+ import SignupForm from './pages/SignupForm';
+ import Centralreseve from './pages/Centralreseve';
+ import PmsConnect from './pages/PmsConnect';
+ import ReserveBackend from './pages/ReserveBackend';
+ import Revenuemanage from './pages/Revenuemanage';
 
 
 function App() {
@@ -39,16 +46,16 @@ function App() {
         <Route path="/Holida-form" element={<HolidayForm />} />
         <Route path="/Forex-form" element={<ForexForm />} />
         <Route path="/Support-form" element={<SupportForm />} />
+        <Route path="/Searchbookings" element={<Searchbookings />} />
+        <Route path="/CustomerSignin" element={<CustomerSignin />} />
+        <Route path="/SignupForm" element={<SignupForm />} />
+        <Route path="/Centralreseve" element={<Centralreseve />} />
+        <Route path="/PmsConnect" element={<PmsConnect />} />
+        <Route path="/ReserveBackend" element={<ReserveBackend />} />
+        <Route path="/Revenuemanage" element={<Revenuemanage />} />
 
 
 
-
-
-
-
-        
-
-       
 
 
 

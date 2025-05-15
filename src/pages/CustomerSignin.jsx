@@ -1,30 +1,15 @@
 import React from "react";
+import { FaBuilding, FaRedoAlt, FaStar, FaUserAlt } from "react-icons/fa";
 
-import { FaBuilding, FaRedoAlt, FaStar, FaUserAlt } from "react-icons/fa"; // Icons similar to the image
-
-const Agent = () => {
+const CustomerSignin = () => {
   return (
-    <div className="container my-5">
-      {/* Sign-in Box */}
-
-      <div
-        className="mx-auto"
-        style={{
-          maxWidth: "500px",
-          border: "1px solid #ccc",
-          borderRadius: "5px",
-          boxShadow: "0px 0px 6px rgba(0,0,0,0.1)",
-          overflow: "hidden", // ensures header radius looks clean
-        }}
-      >
-        <h5
-          className="fw-bold text-start m-0 px-3 py-2"
-          style={{ backgroundColor: "#e9e9e9", borderBottom: "1px solid #ccc" }}
-        >
-          B2B Sign in
-        </h5>
-
-        <div className="p-3">
+    <div className="container mt-5">
+      {/* Sign In Form */}
+      <div className="p-4 border rounded mx-auto" style={{ maxWidth: "400px" }}>
+        <h6 className="fw-bold bg-secondary w-100 mb-4 text-white text-center p-2 rounded-1">
+          Customer Sign in
+        </h6>
+        <form>
           <div className="mb-3">
             <label className="form-label">Email / Mobile no</label>
             <input
@@ -33,7 +18,6 @@ const Agent = () => {
               placeholder="Email / Mobile no"
             />
           </div>
-
           <div className="mb-4">
             <label className="form-label">Password</label>
             <input
@@ -42,34 +26,28 @@ const Agent = () => {
               placeholder="Password"
             />
           </div>
-
-          <div className="d-flex justify-content-center">
-            <button
-              className="btn w-50 fw-semibold text-white"
-              style={{ backgroundColor: "#038A5E" }}
-            >
+          <div className="text-center">
+            <button type="submit" className="btn btn-success w-100">
               Sign in
             </button>
           </div>
-        </div>
+        </form>
       </div>
 
       {/* Why Book Hotels Section */}
-
       <div className="text-center mt-5">
         <h5 className="fw-bold mb-5">Why Book Hotels with ohm.com?</h5>
         <div className="row justify-content-center">
-          {/* Card */}
           {[
             {
               icon: <FaBuilding size={24} className="text-success" />,
               title: "Convenience and Accessibility",
-              text: "24/7 Availability. Booking apps allow users to book hotels anytime, anywhere—without being restricted to business hours.",
+              text: "24/7 availability. Booking apps allow users to book hotels anytime, anywhere—without being restricted to business hours.",
             },
             {
               icon: <FaRedoAlt size={24} className="text-success" />,
               title: "Time-Saving",
-              text: "Instant Confirmation. Many booking websites provide instant confirmation and reduce follow-up communication.",
+              text: "Instant confirmation. Many booking websites provide instant confirmation and reduce follow-up communication.",
             },
             {
               icon: <FaStar size={24} className="text-success" />,
@@ -84,19 +62,14 @@ const Agent = () => {
           ].map((item, idx) => (
             <div
               key={idx}
-              className="col-lg-3 col-md-6 col-sm-6 mb-4 position-relative d-flex justify-content-center"
+              className="col-lg-3 col-md-6 col-sm-6 mb-4 d-flex justify-content-center"
             >
-              {/* Card */}
-              <div
-                className="border rounded text-center pt-5 px-3 pb-3 w-100"
-                style={{ position: "relative" }}
-              >
-                {/* Icon outside border */}
+              <div className="border rounded text-center pt-5 px-3 pb-3 w-100 position-relative">
                 <div
                   className="position-absolute top-0 start-50 translate-middle"
                   style={{
-                    backgroundColor: "white",
-                    border: "1px solid #d1d1d1",
+                    backgroundColor: "#fff",
+                    border: "1px solid #ccc",
                     borderRadius: "50%",
                     width: 48,
                     height: 48,
@@ -115,9 +88,8 @@ const Agent = () => {
           ))}
         </div>
       </div>
-      
     </div>
   );
 };
 
-export default Agent;
+export default CustomerSignin;

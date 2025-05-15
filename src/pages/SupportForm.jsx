@@ -18,7 +18,7 @@ function SupportForm() {
               </div>
               <div className="col-md-6">
                 <label className="form-label">Hotel Email ID</label>
-                <input type="email" className="form-control" />
+                <input type="email" className="form-control  p-4" />
               </div>
             </div>
 
@@ -27,10 +27,13 @@ function SupportForm() {
                 <label className="form-label">Account Manager</label>
                 <input type="text" className="form-control" />
               </div>
+
               <div className="col-md-6">
                 <label className="form-label">Document or PDF or Image, if any</label>
-                <input type="text" className="form-control" />
+                <input type="file" className="form-control" />
               </div>
+
+
             </div>
 
             <div className="mb-3">

@@ -1,65 +1,48 @@
 import React from "react";
+import { FaBuilding, FaRedoAlt, FaStar, FaUserAlt } from "react-icons/fa";
 
-import { FaBuilding, FaRedoAlt, FaStar, FaUserAlt } from "react-icons/fa"; // Icons similar to the image
-
-const Agent = () => {
+const Searchbookings = () => {
   return (
-    <div className="container my-5">
-      {/* Sign-in Box */}
-
-      <div
-        className="mx-auto"
-        style={{
-          maxWidth: "500px",
-          border: "1px solid #ccc",
-          borderRadius: "5px",
-          boxShadow: "0px 0px 6px rgba(0,0,0,0.1)",
-          overflow: "hidden", // ensures header radius looks clean
-        }}
-      >
-        <h5
-          className="fw-bold text-start m-0 px-3 py-2"
-          style={{ backgroundColor: "#e9e9e9", borderBottom: "1px solid #ccc" }}
-        >
-          B2B Sign in
-        </h5>
-
-        <div className="p-3">
-          <div className="mb-3">
-            <label className="form-label">Email / Mobile no</label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Email / Mobile no"
-            />
+    <div className="container">
+      {/* Search Form */}
+      <div className="container p-4 my-4" style={{ backgroundColor: "#f7f0f0" }}>
+        <h6 className="fw-bold bg-secondary w-25 mb-4 text-white text-center p-2 rounded-1">
+          Search Booking
+        </h6>
+        <form>
+          <div className="row mb-3">
+            <div className="col-md-6">
+              <label className="form-label">Booking ID</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter Booking ID"
+              />
+            </div>
+            <div className="col-md-6">
+              <label className="form-label">Mobile No</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter Mobile No"
+              />
+            </div>
           </div>
-
-          <div className="mb-4">
-            <label className="form-label">Password</label>
-            <input
-              type="password"
-              className="form-control"
-              placeholder="Password"
-            />
-          </div>
-
-          <div className="d-flex justify-content-center">
-            <button
-              className="btn w-50 fw-semibold text-white"
-              style={{ backgroundColor: "#038A5E" }}
-            >
-              Sign in
+          <div className="mt-4 d-flex gap-2">
+            <button type="submit" className="btn btn-success">
+              Search
+            </button>
+            <button type="reset" className="btn btn-outline-dark">
+              Reset
             </button>
           </div>
-        </div>
+        </form>
       </div>
 
       {/* Why Book Hotels Section */}
-
       <div className="text-center mt-5">
         <h5 className="fw-bold mb-5">Why Book Hotels with ohm.com?</h5>
         <div className="row justify-content-center">
-          {/* Card */}
           {[
             {
               icon: <FaBuilding size={24} className="text-success" />,
@@ -84,19 +67,16 @@ const Agent = () => {
           ].map((item, idx) => (
             <div
               key={idx}
-              className="col-lg-3 col-md-6 col-sm-6 mb-4 position-relative d-flex justify-content-center"
+              className="col-lg-3 col-md-6 col-sm-6 mb-4 d-flex justify-content-center"
             >
-              {/* Card */}
               <div
-                className="border rounded text-center pt-5 px-3 pb-3 w-100"
-                style={{ position: "relative" }}
+                className="border rounded text-center pt-5 px-3 pb-3 w-100 position-relative"
               >
-                {/* Icon outside border */}
                 <div
                   className="position-absolute top-0 start-50 translate-middle"
                   style={{
-                    backgroundColor: "white",
-                    border: "1px solid #d1d1d1",
+                    backgroundColor: "#fff",
+                    border: "1px solid #ccc",
                     borderRadius: "50%",
                     width: 48,
                     height: 48,
@@ -115,9 +95,8 @@ const Agent = () => {
           ))}
         </div>
       </div>
-      
     </div>
   );
 };
 
-export default Agent;
+export default Searchbookings;
