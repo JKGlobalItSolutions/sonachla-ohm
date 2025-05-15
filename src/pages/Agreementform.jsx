@@ -7,23 +7,30 @@ import form2 from "../assets/image/agreementform/form2.png";
 import form3 from "../assets/image/agreementform/form3.png";
 import form4 from "../assets/image/agreementform/form4.png";
 
-
-
+import agreementPDF from "../assets/pdf/agreement.pdf";
 
 const Agreementform = () => {
   const imageFiles = [form1, form2, form3, form4];
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = agreementPDF;
+    link.download = "AgreementForm.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <div className="container my-4">
       {/* Download Button */}
       <div className="text-end mb-4">
-        <a
-          href="/form1.pdf" // still served from public
-          download
+        <button
+          onClick={handleDownload}
           className="btn btn-success fw-semibold"
         >
           📥 Download Agreement Form
-        </a>
+        </button>
       </div>
 
       {/* Image Previews */}
