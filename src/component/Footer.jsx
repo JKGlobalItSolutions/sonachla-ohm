@@ -103,10 +103,14 @@ const Footer = () => {
           {/* Logo */}
           <div className="col-lg-6 mt-5 mb-md-0">
             <div className="d-flex justify-content-center justify-content-md-start mb-5">
-              <img src={logo} alt="Logo" width="300" height="200" className="rounded-5" />
+              <img
+                src={logo}
+                alt="Logo"
+                width="300"
+                height="200"
+                className="rounded-5"
+              />
             </div>
-
-        
           </div>
 
           {/* Explore, Company, Help + Social/Logos */}
@@ -140,7 +144,7 @@ const Footer = () => {
                   <img
                     src={smedia1}
                     alt="LinkedIn"
-                    width="40"
+                    width="50"
                     height="50"
                     style={{ borderRadius: "50%" }}
                   />
@@ -188,8 +192,6 @@ const Footer = () => {
                 <img src={componislogo} alt="Paytm" height="50" />
               </div>
             </div>
-
-
           </div>
         </div>
 
