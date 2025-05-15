@@ -139,7 +139,7 @@ const Footer = () => {
             {/* Combined Social Media & Company Logos in one row */}
             <div className="mt-3 d-flex flex-wrap justify-content-center justify-content-md-between align-items-center ">
               {/* Social Media Icons */}
-              <div className="d-flex gap-2">
+              <div className="d-flex ">
                 <Link to="/linkedin">
                   <img
                     src={smedia1}
@@ -189,7 +189,7 @@ const Footer = () => {
 
               {/* Payment/Company Logos */}
               <div className="d-flex gap-3 flex-wrap justify-content-center">
-                <img src={componislogo} alt="Paytm" height="50" />
+                <img src={componislogo} alt="Paytm" height="45" />
               </div>
             </div>
           </div>
