@@ -140,7 +140,7 @@ const Footer = () => {
                   <img
                     src={smedia1}
                     alt="LinkedIn"
-                    width="50"
+                    width="40"
                     height="50"
                     style={{ borderRadius: "50%" }}
                   />
