@@ -7,7 +7,7 @@ function SupportForm() {
   return (
     <div className="container mb-5 mt-5">
       <div className="card">
-        <div className="card-header fw-bold">Hotel Support - Raise Your Ticket</div>
+        <div className="card-header fw-bold">Hotel Support - Raise Your Tickets</div>
         <div className="card-body">
           <p className="text-muted">Please provide us required details to serve you better.</p>
           <form>
