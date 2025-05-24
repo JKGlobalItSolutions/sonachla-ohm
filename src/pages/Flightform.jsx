@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaSearch, FaCalendarAlt, FaUserFriends } from "react-icons/fa";
 
 const Flightform = () => {
   const [activeTab, setActiveTab] = useState("oneWay");
@@ -36,7 +37,7 @@ const Flightform = () => {
 
   const FlightInputs = () => (
     <div className="row mb-3">
-      <div className="col-md-4">
+      <div className="col-12 col-md-4 mb-3 mb-md-0">
         <label className="form-label">From</label>
         <input
           type="text"
@@ -44,7 +45,7 @@ const Flightform = () => {
           placeholder="City or Airport"
         />
       </div>
-      <div className="col-md-4">
+      <div className="col-12 col-md-4 mb-3 mb-md-0">
         <label className="form-label">To</label>
         <input
           type="text"
@@ -52,7 +53,7 @@ const Flightform = () => {
           placeholder="City or Airport"
         />
       </div>
-      <div className="col-md-4">
+      <div className="col-12 col-md-4">
         <label className="form-label">Date</label>
         <input type="date" className="form-control" />
       </div>
@@ -60,7 +61,7 @@ const Flightform = () => {
   );
 
   const PassengerSection = () => (
-    <div className="d-flex flex-wrap gap-4 mb-4">
+    <div className="d-flex flex-column flex-md-row gap-3 mb-4 align-items-start">
       <InputGroup label="Adults" value={adults} setValue={setAdults} />
       <InputGroup label="Children" value={children} setValue={setChildren} />
       <InputGroup label="Infants" value={infants} setValue={setInfants} />
@@ -68,25 +69,21 @@ const Flightform = () => {
   );
 
   const tabColors = {
-    oneWay: "#e6f4ea", // Light pastel green
-    roadTrip: "#fff7da", // Light pastel yellow
-    multiCity: "#e5f0ff", // Light pastel blue
+    oneWay: "#e6f4ea", // pastel green
+    roadTrip: "#fff7da", // pastel yellow
+    multiCity: "#e5f0ff", // pastel blue
   };
 
   return (
-    
-
-
-
     <div
-      className="container py-5 p-5"
-      style={{ backgroundColor: "#e0f2f1", minHeight: "100vh"}}
+      className="container px-3 py-4"
+      style={{ backgroundColor: "#e0f2f1", minHeight: "100vh" }}
     >
-      {/* Tab Buttons Styled Section */}
+      {/* Tab Buttons */}
       <div
-        className="d-flex justify-content-around mb-4 p-2"
+        className="d-flex flex-wrap justify-content-center gap-2 mb-4 p-3"
         style={{
-          background: "linear-gradient(to right, #b2dfdb, #a5d6a7)", // Green gradient
+          background: "linear-gradient(to right, #b2dfdb, #a5d6a7)",
           borderRadius: "10px",
           border: "2px solid #4caf50",
         }}
@@ -116,36 +113,6 @@ const Flightform = () => {
       </div>
 
       <div className="bg-white p-4 rounded shadow">
-        {/* Search Button */}
-        <div className="text-end mt-4">
-          <button
-            className="btn btn-lg btn-success px-4"
-            onClick={handleSearch}
-          >
-            🔍 Search
-          </button>
-        </div>
-
-        {/* Tabs */}
-        {/* <ul className="nav nav-tabs mb-4">
-          {['oneWay', 'roadTrip', 'multiCity'].map(tab => (
-            <li className="nav-item" key={tab}>
-              <button
-                className={`nav-link mx-1 ${activeTab === tab ? 'active text-dark' : ''}`}
-                onClick={() => setActiveTab(tab)}
-                style={{
-                  backgroundColor: tabColors[tab],
-                  borderRadius: '6px',
-                  fontWeight: '500',
-                }}
-              >
-                {tab === 'oneWay' ? 'One Way' : tab === 'roadTrip' ? 'Road Trip' : 'Multi City'}
-              </button>
-            </li>
-          ))}
-        </ul> */}
-
-        {/* Form Sections */}
         {activeTab === "multiCity" ? (
           <>
             <div className="mb-3">
@@ -162,10 +129,19 @@ const Flightform = () => {
             <PassengerSection />
           </>
         )}
+
+        {/* Search Button */}
+        <div className="text-end mt-4">
+          <button
+            className="btn btn-lg btn-success w-100 w-md-auto"
+            style={{ maxWidth: "250px" }}
+            onClick={handleSearch}
+          >
+            🔍 Search
+          </button>
+        </div>
       </div>
     </div>
-
-    
   );
 };
 

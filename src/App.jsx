@@ -1,40 +1,55 @@
-import React from 'react';
+import React from "react";
+import { useState } from 'react';
 
-import { HashRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './component/Navbar';
-import Footer from './component/Footer';
-import './App.css';
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from "./component/Navbar";
+import Footer from "./component/Footer";
+import "./App.css";
 
-import Home from './pages/Home';
-import Agent from './pages/Agent';
-import Hotelpatner from './pages/Hotelpatner';
-import Listyourhotel from './pages/Listyourhotel';
-import Agreementform from './pages/Agreementform';
-import Flightform from './pages/FlightForm';
-import BusForm from './pages/BusForm';
-import EventForm from './pages/EventForm';
-import CabForm from './pages/CabForm';
-import HolidayForm from './pages/HolidayForm';
- import ForexForm from './pages/ForexForm';
+import Home from "./pages/Home";
+import Agent from "./pages/Agent";
+import Hotelpatner from "./pages/Hotelpatner";
+import Listyourhotel from "./pages/Listyourhotel";
+import Agreementform from "./pages/Agreementform";
+import Flightform from "./pages/FlightForm";
+import BusForm from "./pages/BusForm";
+import EventForm from "./pages/EventForm";
+import CabForm from "./pages/CabForm";
+import HolidayForm from "./pages/HolidayForm";
+import ForexForm from "./pages/ForexForm";
 
- import SupportForm from './pages/SupportForm';
- import Searchbookings from './pages/Searchbookings';
- import CustomerSignin from './pages/CustomerSignin';
- import SignupForm from './pages/SignupForm';
- import Centralreseve from './pages/Centralreseve';
- import PmsConnect from './pages/PmsConnect';
- import ReserveBackend from './pages/ReserveBackend';
- import Revenuemanage from './pages/Revenuemanage';
+import SupportForm from "./pages/SupportForm";
+import Searchbookings from "./pages/Searchbookings";
+import CustomerSignin from "./pages/CustomerSignin";
+import SignupForm from "./pages/SignupForm";
+import Centralreseve from "./pages/Centralreseve";
+import PmsConnect from "./pages/PmsConnect";
+import ReserveBackend from "./pages/ReserveBackend";
+import Revenuemanage from "./pages/Revenuemanage";
 
+//  coming soon popup
+import ComingSoonPopup from "./pages/ComingSoonPopup";
 
 function App() {
+  
+  const [showPopup, setShowPopup] = useState(false);
+
   return (
     <Router>
       <Navbar />
 
+      {/* Coming Soon Popup here so it shows on every page */}
+
+      <ComingSoonPopup
+        isVisible={showPopup}
+        onClose={() => setShowPopup(false)}
+      />
+
       <Routes>
 
-        <Route path="/" element={<Home />} />
+         <Route path="/" element={<Home showPopup={() => setShowPopup(true)} />} />
+
+
         <Route path="/Agent" element={<Agent />} />
         <Route path="/Hotel-patner" element={<Hotelpatner />} />
         <Route path="/List-your-hotel" element={<Listyourhotel />} />
@@ -53,12 +68,6 @@ function App() {
         <Route path="/PmsConnect" element={<PmsConnect />} />
         <Route path="/ReserveBackend" element={<ReserveBackend />} />
         <Route path="/Revenuemanage" element={<Revenuemanage />} />
-
-
-
-
-
-
       </Routes>
 
       <Footer />
