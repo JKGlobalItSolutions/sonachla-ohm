@@ -6,9 +6,7 @@ const Centralreseve = () => {
       <p>
         We use user friendly and Indian no.2 Ranked channel manager @ best Price with double back end support
       </p>
-      <p>
-        Currently we have our product with <strong>78 Property</strong>
-      </p>
+      
     </div>
   );
 };
