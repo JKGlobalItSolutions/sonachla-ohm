@@ -1,8 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
 export default defineConfig({
-  base:'/sonachla-ohm/',
+  base: '/', // 🔥 FIXED: required for root domain like sonachala.com
   plugins: [react()],
 })
