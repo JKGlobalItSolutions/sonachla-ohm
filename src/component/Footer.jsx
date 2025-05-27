@@ -114,7 +114,7 @@ const Footer = () => {
           </div>
 
           {/* Explore, Company, Help + Social/Logos */}
-          <div className="col-lg-6">
+          <div className="col-lg-6 mt-5">
             <div className="row">
               <div className="col-4">
                 <h6 className="text-uppercase fw-bold mb-3">Explore</h6>
