@@ -55,7 +55,7 @@ const features = [
 
 import tnmap from "../assets/image/homeimg/tnmap.png";
 
-const Home = ({ showPopup }) => {
+const Home = ({ showPopup  }) => {
   return (
     <div>
       <main style={{ backgroundColor: "#f8f9fa" }}>
@@ -121,7 +121,8 @@ const Home = ({ showPopup }) => {
                 {/* <button className="btn btn-success w-100 bg-dark p-3" >
                   Search
                 </button> */}
-                  <button onClick={showPopup()}>Show Coming Soon Popup</button>
+
+                <button className="btn btn-success w-100 bg-dark " onClick={showPopup}>Show Coming Soon Popup</button>
 
                 
               </div>

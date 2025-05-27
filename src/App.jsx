@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from 'react';
+import { useState } from "react";
 
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./component/Navbar";
@@ -31,8 +31,17 @@ import Revenuemanage from "./pages/Revenuemanage";
 import ComingSoonPopup from "./pages/ComingSoonPopup";
 
 function App() {
-  
-  const [showPopup, setShowPopup] = useState(false);
+  // const [showPopup, setShowPopup] = useState(false);
+
+  const [popupKey, setPopupKey] = useState(null);
+
+  const showPopup = () => {
+    setPopupKey(Date.now()); // Every call gets a unique value
+  };
+
+  const closePopup = () => {
+    setPopupKey(null); // Hide the popup
+  };
 
   return (
     <Router>
@@ -40,15 +49,10 @@ function App() {
 
       {/* Coming Soon Popup here so it shows on every page */}
 
-      <ComingSoonPopup
-        isVisible={showPopup}
-        onClose={() => setShowPopup(false)}
-      />
+      {popupKey && <ComingSoonPopup key={popupKey} onClose={closePopup} />}
 
       <Routes>
-
-         <Route path="/" element={<Home showPopup={() => setShowPopup(true)} />} />
-
+        <Route path="/" element={<Home showPopup={showPopup} />} />
 
         <Route path="/Agent" element={<Agent />} />
         <Route path="/Hotel-patner" element={<Hotelpatner />} />
