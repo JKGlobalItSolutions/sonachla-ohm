@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import emailjs from '@emailjs/browser';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import capcha from "../assets/image/agreementform/captcha.png";
 
 function SupportForm() {
@@ -9,18 +9,27 @@ function SupportForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_c82ojes', 'template_94mq7vq', form.current, 'ynqEfG11gKmr6S51S')
-      .then((result) => {
-        alert("Ticket submitted successfully!");
+    emailjs.sendForm(
+      'service_c82ojes',     // replace with your EmailJS Service ID
+      'template_94mq7vq',    // replace with your EmailJS Template ID
+      form.current,
+      'ynqEfG11gKmr6S51S'      // replace with your EmailJS Public Key
+    )
+    .then(
+      (result) => {
+        alert("Form submitted successfully!");
         console.log(result.text);
-      }, (error) => {
-        alert("Failed to submit ticket. Please try again.");
-        console.error(error.text);
-      });
+        form.current.reset();
+      },
+      (error) => {
+        alert("Failed to submit form: " + error.text);
+        console.error(error);
+      }
+    );
   };
 
   return (
-    <div className="container mb-5 mt-5">
+    <div className="container my-5">
       <div className="card">
         <div className="card-header fw-bold">Hotel Support - Raise Your Ticket</div>
         <div className="card-body">
@@ -43,7 +52,7 @@ function SupportForm() {
                 <input type="text" className="form-control" name="account_manager" />
               </div>
               <div className="col-md-6">
-                <label className="form-label">Document or PDF or Image, if any</label>
+                <label className="form-label">Document or Image</label>
                 <input type="file" className="form-control" name="attachment" />
               </div>
             </div>
@@ -55,12 +64,12 @@ function SupportForm() {
 
             <div className="mb-3">
               <label className="form-label">Message</label>
-              <textarea className="form-control" rows="4" name="message" required></textarea>
+              <textarea className="form-control" name="message" rows="4" required></textarea>
             </div>
 
             <div className="row mb-4">
               <div className="col-md-6">
-                <label className="form-label">Verify Code</label>
+                <label className="form-label">Captcha Code</label>
                 <div className="d-flex align-items-center">
                   <img src={capcha} alt="captcha" className="me-2" />
                   <input type="text" className="form-control w-50" name="captcha_code" required />
