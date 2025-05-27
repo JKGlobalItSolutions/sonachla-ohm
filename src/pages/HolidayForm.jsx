@@ -5,7 +5,7 @@ import capcha from "../assets/image/agreementform/captcha.png"
 
 function HolidayForm() {
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 mb-5">
       <div className="card">
         <div className="card-header fw-bold">Holiday Package Enquiry</div>
         <div className="card-body">

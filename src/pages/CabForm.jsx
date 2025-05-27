@@ -1,9 +1,7 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-import capcha from "../assets/image/agreementform/captcha.png"
-
-
+import capcha from "../assets/image/agreementform/captcha.png";
 
 function CabForm() {
   return (
@@ -11,7 +9,9 @@ function CabForm() {
       <div className="card">
         <div className="card-header fw-bold">Cab Enquiry</div>
         <div className="card-body">
-          <p className="text-muted">Please provide us required details for Cab enquiry</p>
+          <p className="text-muted">
+            Please provide us required details for Cab enquiry
+          </p>
           <form>
             <div className="row mb-3">
               <div className="col-md-6">
@@ -72,16 +72,17 @@ function CabForm() {
               <div className="col-md-6">
                 <label className="form-label">Verify Code</label>
                 <div className="d-flex align-items-center">
-                <img src={capcha} alt="captcha" className="me-2" />
+                  <img src={capcha} alt="captcha" className="me-2" />
                   <input type="text" className="form-control w-50" />
                 </div>
               </div>
             </div>
 
             <div className="text-end">
-  <button type="submit" className="btn btn-success p-2 px-4">Submit</button>
-</div>
-
+              <button type="submit" className="btn btn-success p-2 px-4">
+                Submit
+              </button>
+            </div>
           </form>
         </div>
       </div>
