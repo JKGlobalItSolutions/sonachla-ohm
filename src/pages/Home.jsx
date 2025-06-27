@@ -1,8 +1,8 @@
 import React from "react";
 import { FaSearch, FaCalendarAlt, FaUserFriends } from "react-icons/fa";
+import { useState, useEffect } from "react";
 
 import { FaMapMarkerAlt } from "react-icons/fa";
-
 
 import recent1 from "../assets/image/homeimg/recent1.png";
 import recent2 from "../assets/image/homeimg/recent2.png";
@@ -16,7 +16,13 @@ import trand2 from "../assets/image/homeimg/trand2.png";
 import trand3 from "../assets/image/homeimg/trand3.png";
 import trand4 from "../assets/image/homeimg/trand4.png";
 
-import homeimg from "../assets/image/homeimg/scroll.png";
+// import homeimg from "../assets/image/homeimg/scroll.png";
+
+import homeimg1 from "../assets/image/homeimg/scroll1.png";
+import homeimg2 from "../assets/image/homeimg/scroll2.png";
+import homeimg3 from "../assets/image/homeimg/scroll3.png";
+
+const images = [homeimg1, homeimg2, homeimg3];
 
 const trendingDestinations = [
   {
@@ -55,7 +61,19 @@ const features = [
 
 import tnmap from "../assets/image/homeimg/tnmap.png";
 
-const Home = ({ showPopup  }) => {
+const Home = ({ showPopup }) => {
+  const [index, setIndex] = useState(0);
+
+  // Auto slide every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); // 3000ms = 3 seconds
+
+    // Cleanup on unmount
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div>
       <main style={{ backgroundColor: "#f8f9fa" }}>
@@ -64,18 +82,44 @@ const Home = ({ showPopup  }) => {
           className="position-relative text-white"
           style={{ backgroundColor: "#000", height: "400px" }}
         >
-          <img
-            src={homeimg}
-            alt="Hero"
-            className="w-100 h-100 object-fit-cover opacity-50 position-absolute"
-          />
+          {/* <div className="">
+            <img
+              src={homeimg}
+              alt="Hero"
+              className="w-100 h-100 object-fit-cover opacity-50 position-absolute"
+            />
+          </div> */}
 
-          <div className="container position-relative z-1 py-5 d-flex flex-column align-items-start text-start">
-            <h2 className="fw-bold">Pack the whole toybox</h2>
-            <p className="lead">Unwind and spread out in a holiday home</p>
-            <button className="btn btn-success px-4 py-2">
-              Discover holiday rentals
-            </button>
+          <div
+            className="position-relative w-100 overflow-hidden"
+            style={{ height: "400px" }}
+          >
+            {/* Background Image */}
+            <img
+              src={images[index]}
+              alt="Hero"
+              className="w-100 h-100 object-fit-cover opacity-50 position-absolute"
+              style={{ zIndex: 0 }}
+            />
+
+            {/* Optional: Hidden Buttons (can remove entirely if not needed) */}
+            <button
+              className="d-none"
+              onClick={() => setIndex(index - 1)}
+            ></button>
+            <button
+              className="d-none"
+              onClick={() => setIndex(index + 1)}
+            ></button>
+
+            {/* Content Overlay */}
+            <div className="container position-relative z-1 py-5 d-flex flex-column align-items-start text-start">
+              <h2 className="fw-bold">Pack the whole toybox</h2>
+              <p className="lead">Unwind and spread out in a holiday home</p>
+              <button className="btn btn-success px-4 py-2">
+                Discover holiday rentals
+              </button>
+            </div>
           </div>
 
           {/* Search Bar */}
@@ -117,22 +161,24 @@ const Home = ({ showPopup  }) => {
               </div>
 
               <div className="col-md-2">
-
                 {/* <button className="btn btn-success w-100 bg-dark p-3" >
                   Search
                 </button> */}
 
-                <button className="btn btn-success w-100 bg-dark " onClick={showPopup}>Show Coming Soon Popup</button>
-
-                
+                <button
+                  className="btn btn-success w-100 bg-dark "
+                  onClick={showPopup}
+                >
+                  Show Coming Soon Popup
+                </button>
               </div>
             </div>
           </div>
 
           {/* Mobile Search Bar (normal block flow) */}
           <div
-            className="container bg-success shadow rounded mt-5 d-block d-md-none mb-5"
-            style={{ bottom: "-80px", maxWidth: "90%" }}
+            className="container bg-success position-absolute shadow rounded mt-5 d-block d-md-none mb-5 ms-3"
+            style={{ bottom: "-220px", maxWidth: "90%" }}
           >
             <div className="row p-3 g-2">
               <div className="col-12">

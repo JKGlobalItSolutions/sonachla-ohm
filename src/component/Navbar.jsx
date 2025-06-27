@@ -63,11 +63,13 @@ const Navbar = () => {
                 <span className="small fw-semibold mt-1">Hotel & HomeStays</span>
               </a>
               <ul className="dropdown-menu" aria-labelledby="hotelDropdown">
+
                 <li>
                   <Link to="/" className="dropdown-item">
                     Booking
                   </Link>
                 </li>
+                
                 <li>
                   <Link to="/List-your-hotel" className="dropdown-item">
                     List Your Hotel
