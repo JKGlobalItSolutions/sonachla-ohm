@@ -114,7 +114,7 @@ const Home = ({ showPopup }) => {
 
             {/* Content Overlay */}
             <div className="container position-relative z-1 py-5 d-flex flex-column align-items-start text-start">
-              <h2 className="fw-bold">Pack the whole toybox</h2>
+              <h2 className="fw-bold">Handle all bookings in one place</h2>
               <p className="lead">Unwind and spread out in a holiday home</p>
               <button className="btn btn-success px-4 py-2">
                 Discover holiday rentals
